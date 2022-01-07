@@ -21,7 +21,7 @@ def guess_number_game(lives):
 
     end_of_game = False
     while not end_of_game:
-        num_1 = int(input("make a guess"))
+        num_1 = int(input("make a guess："))
         if lives > 1:
             if num_1 == number:
                 print("you win")

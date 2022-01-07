@@ -7,7 +7,7 @@ def deal_card():
     card = random.choice(cards)
     return card
 
-# 创建计算总和函数，如果和=21且只有两张牌，返回哦，如果和大于21，11变成1
+# 创建计算总和函数，如果和=21且只有两张牌，返回0，如果和大于21，11变成1
 
 def calculate_score(cards):
     if sum(cards) == 21 and len(cards) == 2:
