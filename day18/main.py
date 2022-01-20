@@ -9,16 +9,20 @@ timmy_the_turtle.color("red")
 #     timmy_the_turtle.right(90)
 #     timmy_the_turtle.forward(100)
 
-for n in range(15):
-    timmy_the_turtle.forward(10)
-    timmy_the_turtle.penup()
-    timmy_the_turtle.forward(10)
-    timmy_the_turtle.pendown()
+# for n in range(15):
+#     timmy_the_turtle.forward(10)
+#     timmy_the_turtle.penup()
+#     timmy_the_turtle.forward(10)
+#     timmy_the_turtle.pendown()
+
+side = int(input("how many side you want?"))
+jiao = 360/side
 
 
-
-
-
+for n in range(side):
+    
+    timmy_the_turtle.right(jiao)
+    timmy_the_turtle.forward(100)
 
 
 
