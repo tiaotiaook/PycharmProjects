@@ -12,7 +12,7 @@ for turtle_index in range(0,6):
     timmy = Turtle(shape="turtle")
     timmy.color(colors[turtle_index])
     timmy.penup()
-    timmy.goto(x=-230,y=y[turtle_index])
+    timmy.goto(x=-230, y=y[turtle_index])
     all_turtle.append(timmy)
 
 
@@ -33,6 +33,7 @@ while go_on:
 
         random_distance = random.randint(0,10)
         turtle.forward(random_distance)
+
 
 
 
