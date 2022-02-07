@@ -6,8 +6,8 @@ numbers = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
 squared_numbers = [number*number for number in numbers]
 
 #Write your code 👆 above:
-
-print(squared_numbers)
+#
+# print(squared_numbers)
 
 
 numbers = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
@@ -28,12 +28,12 @@ sentence = "What is the Airspeed Velocity of an Unladen Swallow?"
 # Write your code below:
 
 # convert a sentence into a list of words
-dictory = sentence.split()
-print(dictory)
-
-new_dict = {word: len(word) for word in dictory}
-
-print(new_dict)
+# dictory = sentence.split()
+# print(dictory)
+#
+# new_dict = {word: len(word) for word in dictory}
+#
+# print(new_dict)
 #
 # names = ["jsgd","suigdu","shd","shgdkbcjkw","sjgc","hs","hfhhj"]
 # students_scores = {student:random.randint(1,100) for student in names}
@@ -56,6 +56,28 @@ weather_c = {
 
 # Write your code 👇 below:
 
-weather_f = {xingqi : float((temp*9/5)+32) for (xingqi,temp) in weather_c.items()}
+# weather_f = {xingqi: float((temp*9/5)+32) for (xingqi,temp) in weather_c.items()}
+#
+# print(weather_f)
 
-print(weather_f)
+
+student_dict = {
+    "student":["angela","james","lily"],
+    "score":[56,76,98]
+}
+
+import pandas
+
+student_data_frame = pandas.DataFrame(student_dict)
+
+print(student_data_frame)
+
+# for (key,values) in student_data_frame.items():
+#     print(values)
+
+for (index,row) in student_data_frame.iterrows():
+    # print(row)
+    # print(row.student)
+    if row.student == "angela":
+        print(row.score)
+
