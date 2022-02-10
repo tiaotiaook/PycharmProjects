@@ -20,25 +20,17 @@ label_4 = Label(font=("Arial",24,"bold"))
 label_4.grid(column=1, row=1)
 
 def button_clicked():
-    new_text = int(input.get())*1.609
+    new_text = round(int(input.get())*1.609 ,2)
     label_4.config(text=new_text)
 
 
 button = Button(text="calculate",command = button_clicked)
 button.grid(column=1, row=2)
 
-
-
-
 input = Entry(width = 10)
 
 # print(input.get())
 input.grid(column=1,row=0)
-
-
-
-
-
 
 
 window.mainloop()
