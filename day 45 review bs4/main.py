@@ -1,11 +1,54 @@
 from bs4 import BeautifulSoup
+import requests
+
+response = requests.get("https://news.ycombinator.com/news")
+
+yc_web_page = response.text
+
+soup = BeautifulSoup(yc_web_page, "html.parser")
+# print(soup.title)
+articles = soup.find_all(name="a", class_="titlelink")
+
+article_texts=[]
+article_links=[]
+
+for article_tag in articles:
+    article_text = article_tag.getText()
+    article_texts.append(article_text)
+
+    article_link = article_tag.get("href")
+    article_links.append(article_link)
 
 
-with open("website.html") as file:
-    contents = file.read()
+article_upvotes = [int(score.getText().split()[0]) for score in soup.find_all(name = "span",class_ = "score")]
 
 
-soup = BeautifulSoup(contents, "html.parser")
+print(article_texts)
+print(article_links)
+print(article_upvotes)
+
+
+# 查找最大数值
+largest_number = max(article_upvotes)
+print(largest_number)
+# 获得索引
+largest_index = article_upvotes.index(largest_number)
+print(largest_index)
+#
+print(article_texts[int(largest_index+1)])
+
+
+
+
+
+
+
+
+# with open("website.html") as file:
+#     contents = file.read()
+#
+#
+# soup = BeautifulSoup(contents, "html.parser")
 
 
 # print(soup.title)
@@ -36,23 +79,23 @@ soup = BeautifulSoup(contents, "html.parser")
     # print(tag.get("href"))
 
 
-heading = soup.find(name = "h1",id="name")
-print(heading)
-print(heading.getText())
-
-section_heading = soup.find(name = "h3",class_="heading")
-print(section_heading)
-print(section_heading.getText())
-print(section_heading.get("class"))
-
-company_url = soup.select_one(selector="p a")
-print(company_url)
-
-name = soup.select_one(selector="#name")
-print(name)
-
-headings = soup.select(".heading")
-print(headings)
+# heading = soup.find(name = "h1",id="name")
+# print(heading)
+# print(heading.getText())
+#
+# section_heading = soup.find(name = "h3",class_="heading")
+# print(section_heading)
+# print(section_heading.getText())
+# print(section_heading.get("class"))
+#
+# company_url = soup.select_one(selector="p a")
+# print(company_url)
+#
+# name = soup.select_one(selector="#name")
+# print(name)
+#
+# headings = soup.select(".heading")
+# print(headings)
 
 
 
