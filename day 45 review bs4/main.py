@@ -34,7 +34,7 @@ print(largest_number)
 # 获得索引
 largest_index = article_upvotes.index(largest_number)
 print(largest_index)
-#
+#打印标题，但是需要+1
 print(article_texts[int(largest_index+1)])
 
 
