@@ -36,7 +36,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test_b">
+  <component name="RunManager" selected="Python.main (1)">
     <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="day 45 review bs4" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -102,8 +102,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test_b" />
         <item itemvalue="Python.main (1)" />
+        <item itemvalue="Python.test_b" />
       </list>
     </recent_temporary>
   </component>
