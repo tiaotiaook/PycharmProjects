@@ -1,4 +1,5 @@
 import requests
+from datetime import datetime
 #
 # # reponses = requests.get(url="http://api.open-notify.org/iss-now.json")
 # #
@@ -23,21 +24,20 @@ MY_LONG = -0.127758
 parameters = {
     "lat":MY_LAT,
     "lng":MY_LONG,
+    "formatted":0,
 }
 
-response = requests.get(url="https://api.sunrise-sunset.org/json")
+response = requests.get(url="https://api.sunrise-sunset.org/json",params=parameters)
 response.raise_for_status()
 
 data = response.json()
 print(data)
+# 日出日落时间
+sunrise = data["results"]["sunrise"].split("T")[1].split(":")[0]
+sunset = data["results"]["sunset"].split("T")[1].split(":")[0]
+print(sunrise)
+print(sunset)
 
-# import requests
-# from datetime import datetime
-#
-# MY_LAT = 51.507351 # Your latitude
-# MY_LONG = -0.127758 # Your longitude
-#
-# response = requests.get(url="http://api.open-notify.org/iss-now.json")
-# response.raise_for_status()
-# data = response.json()
-# print(data)
+# 现在的时间，但是格式不一样，是24h，需要转换
+time_now = datetime.now()
+print(time_now.hour)
