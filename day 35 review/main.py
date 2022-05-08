@@ -1,6 +1,19 @@
-# part 1 获取
 
 import requests
+import os
+from twilio.rest import Client
+
+account_sid = 'AC23d49f9dfa119090b94a9d5bad9e60ae'
+auth_token ='491404b7fab17b69056c5b5addc113b3'
+
+# account_sid = os.environ['TWILIO_ACCOUNT_SID']
+#
+# auth_token = os.environ['TWILIO_AUTH_TOKEN']
+
+
+
+# part 1 获取
+
 
 parameters = {
    "lat" : 51.507351,
@@ -32,9 +45,22 @@ will_rain = False
 
 for hour_data in weather_slice:
     condition_code = hour_data["weather"][0]["id"]
-    if int(condition_code) < 700:
+    if int(condition_code) > 700:
         will_rain=True
 
 
+# part 3 发送短信
+
 if will_rain:
     print("take umbrella")
+    client = Client ( account_sid, auth_token )
+    message = client.messages \
+        .create (
+        body="take umbrella",
+        from_='+18592956541',
+        to='+8618810227406'
+    )
+
+    print(message.status)
+
+
