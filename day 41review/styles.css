@@ -1,0 +1,16 @@
+    body{
+        background-color:red;
+    }
+
+    hr{
+
+        border-style:dotted;
+<!--        四边只保留一边-->
+        border-left-style:none;
+        border-right-style:none;
+        border-top-style:none;
+        border-color:grey;
+        border-width:5px;
+
+        width:30%
+    }
