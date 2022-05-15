@@ -2,16 +2,21 @@
         color: red;
         font-size: 200px;
     }
-    .bacon{
-        background:purple;
+    .bacon:hover{
+        background:gold;
     }
 
     .broccoli{
         background:red;
     }
 
+    .circular{
+        border-radius:50%;
+    }
 
     #heading{
         color:blue;
 
     }
+
+
