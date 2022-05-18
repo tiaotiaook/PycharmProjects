@@ -12,9 +12,7 @@ def hello_world():
 
 
 @app.route('/bye')
-@make_bold
-@make_emphasis
-@make_underlined
+
 
 def say_bye():
     return 'bye'
