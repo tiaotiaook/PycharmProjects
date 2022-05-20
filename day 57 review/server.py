@@ -35,30 +35,14 @@ def guess(name):
     return render_template("guess.html",name=name,gender=gender,age=age)
 
 
+@app.route("/blog")
+def blog():
+    blog_url="https://api.npoint.io/c790b4d5cab58020d391"
+    response = requests.get(blog_url)
+    all_posts = response.json()
+    return render_template("blog.html", posts=all_posts)
+
+
 if __name__ == "__main__":
     app.run(port =7001 ,debug=True)
 
-#
-# from flask import Flask, render_template
-# import requests
-#
-# app = Flask(__name__)
-#
-# response_1 = requests.get(url="https://api.agify.io")
-# response_2 = requests.get(url="https://api.genderize.io")
-#
-# age=response_1.json()["age"]
-#
-# gender=response_1.json()["gender"]
-#
-# # age_api = "https://api.agify.io"
-# # x_api = "https://api.genderize.io"
-#
-# @app.route('/guess/<name>')
-# def guess(name):
-#
-#     return render_template("index.html",xingbie= gender, num=age)
-#
-#
-# if __name__ == "__main__":
-#     app.run(port =7001 ,debug=True)
