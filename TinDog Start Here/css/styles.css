@@ -22,6 +22,20 @@ h1 {
     line-height: 1.5;
 }
 
+h2{
+    font-family:"Montserrat-Bold";
+    font-size:3rem;
+    line-height:1.5;
+}
+
+h3{
+    font-family:"Montserrat-Bold";
+}
+
+p{
+    color:#8f8f8f;
+}
+
 /*  导航栏    */
 
 .navbar{
@@ -57,3 +71,62 @@ h1 {
 }
 
 
+/*   features section    */
+#features{
+   padding: 7% 15%;
+
+}
+
+.feature-box{
+    text-align:center;
+    padding:5%;
+}
+
+
+.fa-3x{
+    color:#ef8172;
+    margin-bottom:1rem;
+}
+
+
+.fa-3x:hover{
+    color:blue;
+}
+
+
+/*   testimonials section   */
+
+#testimonials{
+    padding: 7% 15%;
+    text-align:center;
+    background-color:#ef8172;
+    color:#fff;
+}
+
+.testimonial-image{
+    width:10%;
+    border-radius:100%;
+    margin:20px;
+
+}
+
+
+
+.carousel-item{
+    padding: 7% 15%;
+
+}
+
+
+#press{
+
+    text-align:center;
+    background-color:#ef8172;
+    padding-bottom:3%;
+
+}
+
+.press-logo{
+    width:15%;
+    margin: 20px 20px 50px;
+}
