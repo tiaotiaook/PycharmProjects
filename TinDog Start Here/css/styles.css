@@ -13,7 +13,7 @@ body{
 
 
 .container-fluid{
-    padding:3% 15%;
+    padding:3% 15% 7%;
 }
 
 h1 {
@@ -66,14 +66,18 @@ p{
 
 /* title image*/
 .title-image{
-    width:60%;
+    width:20%;
     transform:rotate(25deg);
+    position:absolute;
+    right:20%;
 }
 
 
 /*   features section    */
 #features{
    padding: 7% 15%;
+    background-color:#fff;
+    position:relative;
 
 }
 
@@ -130,3 +134,20 @@ p{
     width:15%;
     margin: 20px 20px 50px;
 }
+
+/* pricing section*/
+
+
+#pricing{
+    padding:100px;
+    text-align:center;
+
+}
+
+.pricing-column{
+    padding:3% 2%;
+
+
+}
+
+
