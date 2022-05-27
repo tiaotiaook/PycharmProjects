@@ -42,7 +42,7 @@ for i in range(47):
     new_list.append ( s5 )
     s6 = (random.randint(1,30) + interval) % 30
     new_list.append ( s6 )
-    print(new_list)
+    # print(new_list)
 
     flag = False
     for i in range(len(new_list)):
@@ -54,9 +54,9 @@ for i in range(47):
             break
 
     if flag:
-        print("有重复")
+        print(f"有重复,{new_list}")
     else:
-        print("没有重复")
+        print(f"没有重复,{new_list}")
 
 
 
