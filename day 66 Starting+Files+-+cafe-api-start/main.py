@@ -59,26 +59,50 @@ def get_random_cafe():
     )
 
 
-@app.route('/all')
-def all_cafes():
-    cafes_list=[]
-    cafes= db.session.query(Cafe).all()
-    for cafe in cafes:
-        each_cafe= {
-                    'id':cafe.id,
-                    'name':cafe.name,
-                    'location':cafe.location,
-                    'coffee_price':cafe.coffee_price,
-                    'seats':cafe.seats,
-                    'img_url':cafe.img_url,
-                    'map_url':cafe.map_url,
-                    'has_wifi':cafe.has_wifi,
-                    'has_sockets':cafe.has_sockets,
-                    'can_take_calls':cafe.can_take_calls,
-                    'has_toilet':cafe.has_toilet,
-        }
-        cafes_list.append(each_cafe)
-    return jsonify(cafes=cafes_list)
+def to_dict(self):
+    return {column.name: getattr(self, column.name) for column in self.__table__.columns}
+
+@app.route("/all")
+def get_all_cafes():
+    cafes = db.session.query(Cafe).all()
+    return jsonify(cafes=[to_dict(cafe) for cafe in cafes])
+
+
+@app.route("/search")
+def get_cafe_at_location():
+    query_location = request.args.get("loc")
+    cafe = db.session.query(Cafe).filter_by(location=query_location).first()
+    if cafe:
+        return jsonify(cafe=to_dict(cafe))
+    else:
+        return jsonify(error={"Not Found": "Sorry, we don't have a cafe at that location."})
+
+
+# @app.route('/all')
+# def all_cafes():
+#     cafes_list=[]
+#     cafes= db.session.query(Cafe).all()
+#     for cafe in cafes:
+#         each_cafe= {
+#                     'id':cafe.id,
+#                     'name':cafe.name,
+#                     'location':cafe.location,
+#                     'coffee_price':cafe.coffee_price,
+#                     'seats':cafe.seats,
+#                     'img_url':cafe.img_url,
+#                     'map_url':cafe.map_url,
+#                     'has_wifi':cafe.has_wifi,
+#                     'has_sockets':cafe.has_sockets,
+#                     'can_take_calls':cafe.can_take_calls,
+#                     'has_toilet':cafe.has_toilet,
+#         }
+#         cafes_list.append(each_cafe)
+#     return jsonify(cafes=cafes_list)
+
+
+
+
+
 
 ## HTTP POST - Create Record
 
