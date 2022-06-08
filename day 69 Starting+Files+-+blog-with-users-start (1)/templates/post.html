@@ -1,3 +1,7 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
 {% include "header.html" %}
 
   <!-- Page Header -->
@@ -10,7 +14,7 @@
             <h1>{{post.title}}</h1>
             <h2 class="subheading">{{post.subtitle}}</h2>
             <span class="meta">Posted by
-              <a href="#">{{post.author}}</a>
+              {{post.author}}
               on {{post.date}}</span>
           </div>
         </div>
@@ -26,9 +30,11 @@
             {{ post.body|safe }}
           <hr>
 
-            <div class="clearfix">
-            <a class="btn btn-primary float-right" href="{{url_for('edit_post', post_id=post.id)}}">Edit Post</a>
-            </div>
+          {% if current_user.id == 1 %}
+           <div class="clearfix">
+          <a class="btn btn-primary float-right" href="{{url_for('edit_post', post_id=post.id)}}">Edit Post</a>
+          </div>
+          {% endif %}
 
 
 
@@ -37,7 +43,7 @@
               <ul class="commentList">
                 <li>
                     <div class="commenterImage">
-                      <img src="https://pbs.twimg.com/profile_images/744849215675838464/IH0FNIXk.jpg"/>
+                      <img src="https://gist.github.com/angelabauer/223c5e4e1a2ecd0f232f18ab3471733a"/>
                     </div>
                     <div class="commentText">
                       <p>Some comment</p>
@@ -54,4 +60,6 @@
   </article>
 
   <hr>
+
 {% include "footer.html" %}
+{% endblock %}
