@@ -1,16 +1,17 @@
-# This is a sample Python script.
-
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+# How to use .describe() to quickly see some descriptive statistics at a glance.
+#
+# How to use .resample() to make a time-series data comparable to another by changing the periodicity.
+#
+# How to work with matplotlib.dates Locators to better style a timeline (e.g., an axis on a chart).
+#
+# How to find the number of NaN values with .isna().values.sum()
+#
+# How to change the resolution of a chart using the figure's dpi
+#
+# How to create dashed '--' and dotted '-.' lines using linestyles
+#
+# How to use different kinds of markers (e.g., 'o' or '^') on charts.
+#
+# Fine-tuning the styling of Matplotlib charts by using limits, labels, linewidth and colours (both in the form of named colours and HEX codes).
+#
+# Using .grid() to help visually identify seasonality in a time series.
